@@ -1,0 +1,13 @@
+{
+  "name": "shiploom-local",
+  "owner": {
+    "name": "Shiploom"
+  },
+  "plugins": [
+    {
+      "name": "shiploom",
+      "source": "./plugins/shiploom",
+      "description": "可复用项目交付流程"
+    }
+  ]
+}

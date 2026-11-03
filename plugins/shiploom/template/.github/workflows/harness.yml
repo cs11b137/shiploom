@@ -1,0 +1,18 @@
+name: Harness verification
+on: [pull_request, push]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Full verification
+        run: python3 harness/verify.py full
+      - name: Upload verification report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: harness-verification
+          path: .harness/verify-full.json
+          if-no-files-found: warn
